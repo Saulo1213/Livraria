@@ -1,0 +1,36 @@
+<h1>Lista de Livros</h1>
+<table class="table table-striped">
+<thead>
+<tr>
+<th>Título</th>
+<th>Autor</th>
+<th>Ano</th>
+<th>Ações</th>
+</tr>
+</thead>
+<tbody>
+{{#each livros}}
+<tr>
+<td>{{titulo}}</td>
+<td>{{autor}}</td>
+<td>{{ano}}</td>
+<td>
+<a href="/livros/{{id}}/editar" class="btn btn-primary
+
+btn-sm">Editar</a>
+
+<form method="POST" action="/livros/{{id}}?_method=DELETE"
+
+style="display: inline;">
+
+<button type="submit" class="btn btn-danger
+
+btn-sm">Remover</button>
+</form>
+</td>
+</tr>
+{{/each}}
+</tbody>
+</table>
+<a href="/livros/cadastrar" class="btn btn-success">Cadastrar novo
+livro</a>
